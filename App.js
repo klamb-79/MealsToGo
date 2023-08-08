@@ -1,15 +1,21 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from 'react-native';
+import { Searchbar } from "react-native-paper";
+import {MySearch} from "./src/componets/mySearch"
+
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.search}>
-        <Text>search</Text>
+      <MySearch />
       </View >
       <View style={styles.foodlist}>
         <Text style={{padding: 15}}>list</Text>
       </View >
+      
+
+
       
     </View>
   );
@@ -30,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     //height: 30,
     padding: 15,
-    backgroundColor: "green"
+    //backgroundColor: "green"
 
   },
   foodlist:{
