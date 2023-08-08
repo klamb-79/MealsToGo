@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   search:{
     //flexDirection: 'column',
-    width: 400,
+    width: 410,
     justifyContent: "center",
     //height: 30,
     padding: 15,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   foodlist:{
     flex: 1,
-    width: 400,
+    width: 410,
     height: 100,
     backgroundColor: "blue"
   }
