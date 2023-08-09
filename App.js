@@ -1,22 +1,12 @@
-import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from 'react-native';
-import { Searchbar } from "react-native-paper";
-import {MySearch} from "./src/componets/mySearch"
+import { ResaurantScreen } from "./src/features/restaurants/screen/resaurant.screen";
+
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.search}>
-      <MySearch />
-      </View >
-      <View style={styles.foodlist}>
-        <Text style={{padding: 15}}>list</Text>
-      </View >
-      
-
-
-      
+      <ResaurantScreen/>
     </View>
   );
 }
@@ -29,20 +19,5 @@ const styles = StyleSheet.create({
    backgroundColor: "white",
    paddingTop:20,
   //  paddingBottom: 20
-  },
-  search:{
-    //flexDirection: 'column',
-    width: 410,
-    justifyContent: "center",
-    //height: 30,
-    padding: 15,
-    //backgroundColor: "green"
-
-  },
-  foodlist:{
-    flex: 1,
-    width: 410,
-    height: 100,
-    backgroundColor: "blue"
   }
 });
