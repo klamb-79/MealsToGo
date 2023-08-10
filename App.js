@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { ResaurantScreen } from "./src/features/restaurants/screen/resaurant.screen";
+import { RestaurantScreen } from "./src/features/restaurants/screen/restaurant.screen";
 
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ResaurantScreen/>
+      <RestaurantScreen/>
     </View>
   );
 }

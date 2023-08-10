@@ -2,15 +2,16 @@ import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from 'react-native';
 import { Searchbar } from "react-native-paper";
+import { RestaurantInfo } from "../components/restaurant-info.componet";
 
 
-export const ResaurantScreen = () => (
+export const RestaurantScreen = () => (
     <>
     <View style={styles.search}>
       <Searchbar />
       </View >
       <View style={styles.foodlist}>
-        <Text style={{padding: 15}}>list</Text>
+        <RestaurantInfo/>
       </View >
     </>
 )
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
       width: 410,
       justifyContent: "center",
       //height: 30,
-      padding: 15,
+      padding: 10,
       //backgroundColor: "green"
   
     },
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
       flex: 1,
       width: 410,
       height: 100,
-      backgroundColor: "blue"
+      backgroundColor: "blue",
+      padding: 20
     }
   });
