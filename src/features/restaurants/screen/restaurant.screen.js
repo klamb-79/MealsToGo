@@ -1,18 +1,38 @@
 import React from "react";
+import styled from "styled-components/native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from 'react-native';
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfo } from "../components/restaurant-info.componet";
 
 
+const RestaurantSearch = styled(View)`
+  width: 410px;
+  justify-content: center;
+  padding: 10px;
+
+`;
+const RestaurantFoodList = styled(View)`
+  flex: 1;
+  width: 410px;
+  height: 100px;
+  background-color: blue;
+  padding: 20px;
+
+`
+
 export const RestaurantScreen = () => (
     <>
-    <View style={styles.search}>
-      <Searchbar />
-      </View >
-      <View style={styles.foodlist}>
-        <RestaurantInfo/>
-      </View >
+
+    <RestaurantSearch>
+      <Searchbar/>
+    </RestaurantSearch>
+
+    <RestaurantFoodList>
+      <RestaurantInfo/>
+    </RestaurantFoodList>
+    
+      
     </>
 )
     
@@ -25,21 +45,6 @@ const styles = StyleSheet.create({
      backgroundColor: "white",
      paddingTop:20,
     //  paddingBottom: 20
-    },
-    search:{
-      //flexDirection: 'column',
-      width: 410,
-      justifyContent: "center",
-      //height: 30,
-      padding: 10,
-      //backgroundColor: "green"
-  
-    },
-    foodlist:{
-      flex: 1,
-      width: 410,
-      height: 100,
-      backgroundColor: "blue",
-      padding: 20
     }
+    
   });
