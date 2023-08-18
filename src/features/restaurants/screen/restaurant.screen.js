@@ -36,15 +36,3 @@ export const RestaurantScreen = () => (
     </>
 )
     
-
-const styles = StyleSheet.create({
-    container: {
-     
-     flex: 1,
-     //justifyContent: "center",
-     backgroundColor: "white",
-     paddingTop:20,
-    //  paddingBottom: 20
-    }
-    
-  });
