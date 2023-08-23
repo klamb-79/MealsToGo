@@ -8,22 +8,32 @@ import { RestaurantInfo } from "../components/restaurant-info.componet";
 
 const RestaurantSearch = styled(View)`
   width: 410px;
+  background-color: ${(props) => props.theme.colors.bg.secondary};
   justify-content: center;
-  padding: 10px;
+  padding: ${(props) => props.theme.space[2]};
 
 `;
 const RestaurantFoodList = styled(View)`
   flex: 1;
   width: 410px;
   height: 100px;
-  background-color: blue;
-  padding: 20px;
+  background-color: ${(props) => props.theme.colors.bg.secondary};
+  padding: ${(props) => props.theme.space[3]};
 
+`
+const RestaurantTitle = styled(Text)`
+    justify-content: center;
+    text-align: center;
+    padding: ${(props) => props.theme.space[1]};
+    
 `
 
 export const RestaurantScreen = () => (
     <>
 
+      <RestaurantTitle>
+          Meals To Go
+      </RestaurantTitle>
     <RestaurantSearch>
       <Searchbar/>
     </RestaurantSearch>
