@@ -8,13 +8,14 @@ import {  useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 
 
 export default function App() {
-  let [oswaldLoaded] = useoswald({
+  const [oswaldLoaded] = useoswald({
     Oswald_400Regular,
   });
 
-  let [latoLoaded] = useLato({
+ const [latoLoaded] = useLato({
     Lato_400Regular,
   });
+  
   if(!oswaldLoaded || !latoLoaded) {
     return null;
   }
