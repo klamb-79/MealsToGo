@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { Text, Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
+import { Spacer } from "../../../componets/spacer/spacer.componet";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
@@ -18,7 +19,7 @@ const RestaurantCardCover = styled(Card.Cover)`
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.body};
-
+  padding-bottom: ${(props) => props.theme.space[2]};
   color: ${(props) => props.theme.colors.ui.primary};
 `;
 
@@ -57,7 +58,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     ],
     address = "Constitution Drive Belmopan",
     isOpenNow = true,
-    rating = 2,
+    rating = 5,
     isClosedTemporarily = true,
   } = restaurant;
 
@@ -81,9 +82,9 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant="left.medium" />
             {isOpenNow && <Open xml={open} width={30} height={30} />}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant="left.large"/>
             <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </SectionEnd>
         </Section>
