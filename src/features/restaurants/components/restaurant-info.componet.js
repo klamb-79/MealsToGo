@@ -77,15 +77,18 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             ))}
           </Rating>
           <SectionEnd>
-          {isClosedTemporarily && (
+            {isClosedTemporarily && (
               <Text variant="label" style={{ color: "red" }}>
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <Spacer variant="left.medium" />
-            {isOpenNow && <Open xml={open} width={30} height={30} />}
-            <Spacer variant="left.large"/>
-            <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            <Spacer position="left" size="large">
+              {isOpenNow && <Open xml={open} width={30} height={30} />}
+            </Spacer>
+
+            <Spacer position="left" size="large">
+              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            </Spacer>
           </SectionEnd>
         </Section>
 
