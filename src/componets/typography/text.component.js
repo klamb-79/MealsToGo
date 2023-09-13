@@ -32,12 +32,19 @@ const label = (theme) => `
     font-weight: ${theme.fontWeights.medium};
 `;
 
+const appName = (theme) => `
+    font-family: ${theme.fonts.heading};
+    font-size: ${theme.fontSizes.h5};
+    font-weight: ${theme.fontWeights.bold};
+`;
+
 const variants = {
   body,
   label,
   caption,
   error,
   hint,
+  appName,
 };
 
 export const Text = styled.Text`

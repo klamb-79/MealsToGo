@@ -20,7 +20,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     name = "Heritage Coffee House + Tea Bar ",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
-      "https://scontent.fbze2-1.fna.fbcdn.net/v/t39.30808-6/364776055_619632136947334_596166775466349214_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NvFwFHT-zFsAX-uOwGD&_nc_ht=scontent.fbze2-1.fna&oh=00_AfCWg3nMv83jOtSiSWCJ20_bzpkpGI_hVx4fU2ut4udu3w&oe=64EC059E",
+      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
     ],
     address = "Constitution Drive Belmopan",
     isOpenNow = true,

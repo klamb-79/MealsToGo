@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
+import { Text } from "../../../componets/typography/text.component";
 
 export const Icon = styled.Image`
   width: 15px;
@@ -41,4 +42,10 @@ export const SectionEnd = styled.View`
 `;
 export const Open = styled(SvgXml)`
   flex-direction: row;
+`;
+
+export const RestaurantTitle = styled.Text`
+  justify-content: center;
+  text-align: center;
+  padding-top: ${(props) => props.theme.space[3]};
 `;

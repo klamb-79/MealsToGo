@@ -17,15 +17,9 @@ const RestaurantFoodList = styled.View`
   background-color: ${(props) => props.theme.colors.bg.secondary};
   padding: ${(props) => props.theme.space[2]};
 `;
-const RestaurantTitle = styled.Text`
-  justify-content: center;
-  text-align: center;
-  padding-top: ${(props) => props.theme.space[4]};
-`;
 
 export const RestaurantScreen = () => (
   <>
-    <RestaurantTitle>Meals To Go</RestaurantTitle>
     <RestaurantSearch>
       <Searchbar />
     </RestaurantSearch>
