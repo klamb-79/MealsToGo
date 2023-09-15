@@ -13,21 +13,17 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-function Restaurant() {
-  return <RestaurantScreen />;
-}
-
 function Map() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Map</Text>
+      <Text variant="appName">Map!</Text>
     </View>
   );
 }
 function SettingsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Settings!</Text>
+      <Text variant="appName"> Settings!</Text>
     </View>
   );
 }
@@ -55,7 +51,7 @@ export default function App() {
         </RestaurantTitle>
         <NavigationContainer>
           <Tab.Navigator>
-            <Tab.Screen name="Resturant" component={Restaurant} />
+            <Tab.Screen name="Resturant" component={RestaurantScreen} />
             <Tab.Screen name="Map" component={Map} />
             <Tab.Screen name="Settings" component={SettingsScreen} />
           </Tab.Navigator>

@@ -8,7 +8,7 @@ const RestaurantSearch = styled.View`
   width: 410px;
   background-color: ${(props) => props.theme.colors.bg.secondary};
   justify-content: center;
-  padding: ${(props) => props.theme.space[2]};
+  padding: ${(props) => props.theme.space[1]};
 `;
 const RestaurantFoodList = styled.View`
   flex: 1;
