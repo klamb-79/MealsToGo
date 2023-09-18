@@ -1,6 +1,5 @@
 import { StyleSheet, View } from "react-native";
 import { theme } from "./src/infrastructure/theme";
-import styled from "styled-components/native";
 import { Text } from "./src/componets/typography/text.component";
 import { RestaurantScreen } from "./src/features/restaurants/screen/restaurant.screen";
 import { ThemeProvider } from "styled-components/native";
@@ -8,10 +7,12 @@ import {
   useFonts as useoswald,
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
+import { SafeArea } from "./src/componets/utilities/safe-area.component";
 import { RestaurantTitle } from "./src/features/restaurants/components/restaurant-info-card.sytles";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons, Foundation } from "@expo/vector-icons";
 
 function Map() {
   return (
@@ -44,29 +45,38 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeArea>
       <ThemeProvider theme={theme}>
         <RestaurantTitle>
           <Text variant="appName">Meals To Go</Text>
         </RestaurantTitle>
         <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="Resturant" component={RestaurantScreen} />
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ color, size }) => {
+                let iconName;
+
+                if (route.name === "Restaurant") {
+                  iconName = "restaurant";
+                } else if (route.name === "Settings") {
+                  iconName = "settings";
+                } else if (route.name === "Map") {
+                  iconName = "map";
+                }
+
+                // You can return any component that you like here!
+                return <Ionicons name={iconName} size={size} color={color} />;
+              },
+              tabBarActiveTintColor: "tomato",
+              tabBarInactiveTintColor: "gray",
+            })}
+          >
+            <Tab.Screen name="Restaurant" component={RestaurantScreen} />
             <Tab.Screen name="Map" component={Map} />
             <Tab.Screen name="Settings" component={SettingsScreen} />
           </Tab.Navigator>
         </NavigationContainer>
       </ThemeProvider>
-    </View>
+    </SafeArea>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //justifyContent: "center",
-    backgroundColor: "white",
-    paddingTop: 20,
-    //  paddingBottom: 20
-  },
-});
