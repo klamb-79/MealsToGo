@@ -29,6 +29,21 @@ function SettingsScreen() {
   );
 }
 
+const TAB_ICON = {
+  Restaurant: "restaurant",
+  Map: "map",
+  Settings: "settings",
+};
+
+const createScreenOptions = ({ route }) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+  };
+};
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -52,24 +67,11 @@ export default function App() {
         </RestaurantTitle>
         <NavigationContainer>
           <Tab.Navigator
-            screenOptions={({ route }) => ({
-              tabBarIcon: ({ color, size }) => {
-                let iconName;
-
-                if (route.name === "Restaurant") {
-                  iconName = "restaurant";
-                } else if (route.name === "Settings") {
-                  iconName = "settings";
-                } else if (route.name === "Map") {
-                  iconName = "map";
-                }
-
-                // You can return any component that you like here!
-                return <Ionicons name={iconName} size={size} color={color} />;
-              },
-              tabBarActiveTintColor: "tomato",
-              tabBarInactiveTintColor: "gray",
-            })}
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              activeTintColor: "tomato",
+              inactiveTintColor: "gray",
+            }}
           >
             <Tab.Screen name="Restaurant" component={RestaurantScreen} />
             <Tab.Screen name="Map" component={Map} />
